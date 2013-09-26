@@ -1,820 +1,350 @@
 <!--
-Google IO 2012/2013 HTML5 Slide Template
+    Google IO 2012/2013 HTML5 Slide Template
 
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
+    Authors: Eric Bidelman <ebidel@gmail.com>
+             Luke Mahé <lukem@google.com>
 
-URL: https://code.google.com/p/io-2012-slides
--->
+    URL: https://code.google.com/p/io-2012-slides
+    -->
 <!DOCTYPE html>
 <html>
-<head>
-  <title></title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <!--This one seems to work all the time, but really small on ipad-->
-  <!--<meta name="viewport" content="initial-scale=0.4">-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" media="all" href="stylesheets/default.css">
-  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="stylesheets/phone.css">
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="javascripts/slides" src="javascripts/require-1.0.8.min.js"></script>
-</head>
-<body style="opacity: 0">
-
-<slides class="layout-widescreen">
-
-  <slide class="logoslide nobackground">
-  <hgroup>
-      <h2>Effective Engineer</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <span><img src="images/effective_engineer.jpg"></span>
-    </article>
-  </slide>
-
-  <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/bulb.jpg"></aside>
-    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
-    <hgroup class="auto-fadein">
-      <h1 data-config-title><!-- populated from slide_config.json --></h1>
-      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
-      <p data-config-presenter><!-- populated from slide_config.json --></p>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Disclaimer</h2>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>These tips are based on my experience!</li>
-        <li>I could be wrong sometimes. YMMV.</li>
-        <li>Dont complain about this slides design.</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <h2>Who is an Effective Engineer ?</h2>
-      <h3>One who......</h3>
-    </article>
-  </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>How many of you tried installing different versions of Python ?</li>
-        </ul>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Knows how to install &amp; configure all general purpose softwares.</h2>
-    </hgroup>
-    <article>
-    <p>Like :</p>
-      <ul class="build fade">
-        <li>OSes. Like Linux etc... Most of the times</li>
-        <li>Editors. Like Vim, Emacs, SublimeText.</li>
-        <li>IDEs. Like Eclipse, PyCharm, Intellij-Idea</li>
-        <li>Languages. Like Python 2.6.x, 2.7.x, 3.3.x etc...</li>
-      </ul>
-      <br/>
-      <p>And :</p>
-      <ul class="build fade">
-        <li>No Sysadmins are involved</li>
-        <li>Never stops using new tools</li>
-      </ul>
-    </article>
-  </slide>
-
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>How many of you have done this ?</li>
-        </ul>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>When issues come from various points.</h2>
-    </hgroup>
-    <article>
-      <p>Like :</p>
-      <ul class="build fade">
-        <li><b>Editors</b> not working!</li>
-        <li><b>Builds</b> not working!</li>
-        <li><b>Version Control System</b> not working!.</li>
-        <li>Worst case! <b>App code</b> not working!</li>
-      </ul>
-      <p>Now what ?</p>
-      <ul class="build fade">
-        <li>spends some 5-10 mins on the problem to see what could be the reason</li>
-        <li>Quickly finds a way to solve it or even bypass it.</li>
-        <li>May check Web</li>
-        <li>May even won't mind checking the source code of 3rd party library from where the problem arises.</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/yes-i-can.jpg"></span>
-
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Lets run the program</h2>
-    </hgroup>
-    <article>
-      <ul class='build'>
-        <li>Using Python Interpreter
-          <ul>
-            <li>
-            <pre class="prettyprint" data-lang="python">$ python
-Python 2.7.2 (default, Oct 11 2012, 20:14:37)
-[GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
-<b>&gt;&gt;&gt; print 'Hello World.'
-Hello World.</b>
-&gt;&gt;&gt;</pre></li>
-          </ul>
-        </li>
-        <li>
-          Using Python script
-          <ul>
-            <li>
-              <pre class="prettyprint" data-lang="shell">$ cat hello.py
-print 'Hello World.'
-$ <b>python hello.py</b>
-Hello World.
-              </pre>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <h3>Now that you are partially convinced.....</h3>
-      <h2>Lets dig deep into <b>Python</b></h2>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Numbers, and related operators</h2>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; 3 + 2
-5
-&gt;&gt;&gt; 5 * 3
-15
-&gt;&gt;&gt; 5 - 2
-3
-&gt;&gt;&gt; 5 ** 4
-625
-&gt;&gt;&gt; 5 / 9
-0
-&gt;&gt;&gt; 5 / 9.0
-0.5555555555555556
-&gt;&gt;&gt; 5 % 2
-1
-&gt;&gt;&gt; type(4)
-&lt;type 'int'&gt;
-&gt;&gt;&gt; type(5/9.0)
-&lt;type 'float'&gt;</pre>
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Assignments</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Dynamic Typing
-        <ul>
-          <li>No explicit <code>Type</code> declarations are required.</li>
-          <li>Type checking is done at <code>Run-Time</code></li>
-        </ul>
-        </li>
-      </ul>
-      <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; students_count = 50
-&gt;&gt;&gt; total_groups = 10
-&gt;&gt;&gt; num_of_students_in_each_group = students_count / total_groups
-&gt;&gt;&gt; num_of_students_in_each_group
-5
-      </pre>
-      Useful Tip :<br/><br/>For God sakes, lets not have <code>x = 5</code> or <code>i = 10</code>.<br/><br/>Define variable names with <code>meaning</code> I say!
-
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Strings</h2>
-    </hgroup>
-    <article>
-      <ul class="build"><li>String assignment<br/>
-      <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; greeting = 'hello!'
-&gt;&gt;&gt; print greeting
-hello!
-      </pre>
-      </li>
-      <li>
-      <code>Multi</code>-line strings
-      <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; text = '''the quick brown fox jumped on me (yes thats me, not the
-... lazy cat) and ate my lunch. I dont know why! The Gods must be crazy I say!'''
-&gt;&gt;&gt;
-      </pre>
-      </li>
-      <li>
-        Concatentation
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; 'Ramesh! ' + 'Suresh! ' + 'Can you give me your Five-Star'
-'Ramesh! Suresh! Can you give me your Five-Star ?'
-      </pre>
-      </li>
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Printing Strings</h2>
-    </hgroup>
-    <article>
-    <ul class="build">
-      <li>
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; name = 'Ramesh'
-&gt;&gt;&gt; print 'Good Morning %s' % name
-Good Morning Ramesh
-      </pre>
-      </li>
-      <li>
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; print 'Good Morning {0}'.format(name)
-Good Morning Ramesh
-      </pre>
-      </li>
-    </ul>
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Conditional statements</h2>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; 10 &gt; 20
-False
-&gt;&gt;&gt; 20 &gt; 4
-True
-&gt;&gt;&gt; 10 / 20 &gt; 2  # Don't confuse yourself and others. Use brackets I say!
-False
-&gt;&gt;&gt; x = 10
-&gt;&gt;&gt; 3 &lt; x &lt; 15
-True
-      </pre>
-        </li>
-      </ul>
-
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>If Conditions</h2>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; friend = 'Ramesh'
-&gt;&gt;&gt; if friend == 'Ramesh':
-...     print 'Play Games Together'
-... elif friend == 'Dad':
-...     print 'Give Coffee'
-... else:
-...     print 'Not invited'
-Play Games Together
-      </pre>
-        </li>
-      </ul>
-
-    </article>
-    </slide>
-
-<slide>
-    <hgroup>
-      <h2>Lists</h2>
-      <h3>A Data Structure to contain multiple items. Similar to an Array.</h3>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; shopping_items = ['Milk', 'Dosa Mix', 'Chicken', 'Soap']
-&gt;&gt;&gt; greetings = [5, 4, 3, 2, 1, 'Happy New Year!']
-&gt;&gt;&gt; type(greetings)
-&lt;type 'list'&gt;
-</pre></li>
-<li>
-<pre class="prettyprint" data-lang="python">&gt;&gt;&gt; greetings.append(2014)  # Lists are mutable
-&gt;&gt;&gt; help(list)  # Gives a detailed description of all operations on a list</pre></li>
-<li>
-<pre class="prettyprint" data-lang="python">&gt;&gt;&gt; greetings[5]
-'Happy New Year!'
-&gt;&gt;&gt; greetings[-1]
-2014
-&gt;&gt;&gt; greetings[2:]
-[3, 2, 1, 'Happy New Year!', 2014]
-</pre>
-        </li>
-      </ul>
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Tuples</h2>
-      <h3>A <code>Non-mutable</code> Data Structure to contain multiple items.</h3>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; greetings = <b>(</b>5, 4, 3, 2, 1, 'Happy New Year!', 2014<b>)</b>
-</pre></li>
-<li>
-<pre class="prettyprint" data-lang="python">&gt;&gt;&gt; type(greetings)
-&lt;type 'tuple'&gt;
-&gt;&gt;&gt; help(greetings)  # or help(tuple) to know more about "tuple"
-</pre></li>
-      </ul>
-    </article>
-    </slide>
-
- <slide>
-    <hgroup>
-      <h2>Functions</h2>
-      <h3>A piece of logic to be associated with a name</h3>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; def greet_me():
-...     print 'Hello Students'
-...
-&gt;&gt;&gt; greet_me()
-Hello Students
-          </pre>
-        </li>
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; def square_me(number):
-...     return number * number
-...
-&gt;&gt;&gt; square_me(10)
-100
-          </pre>
-        </li>
-      </ul>
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Built-in Handy functions</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>len(sequence)</li>
-        <li>min(sequence)</li>
-        <li>max(sequence)</li>
-        <li>range(number)</li>
-        <li>map(handle, sequence)</li>
-        <li>reduce(handle, sequence)</li>
-        <li>type(object)</li>
-        <li>help(object)</li>
-        <li>dir(object)</li>
-        <li><a href="http://docs.python.org/2/library/functions.html">Many more</a> and <a href="http://docs.python.org/3/library/functions.html">many many more!</a></li>
-      </ul>
-    </article>
-    </slide>
-
-
-  <slide>
-    <hgroup>
-      <h2>Methods</h2>
-      <h3>Similar to functions but actually work <code>on objects</code></h3>
-    </hgroup>
-    <article>
-    <ul>
-      <li>The object (i.e., instance of the class) is passed <code>implicitly</code> to the method
-      <li>The method has access to all the data contained within the class</li>
-      <ul class="build">
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; class Student(object):
-...     def __init__(self, name):
-...         self.name = name
-...     def print_name(self):
-...         print self.name
-...
-&gt;&gt;&gt;
-</pre>
-        </li>
-        <li>
-          <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; stud = Student(name='Ramesh')
-&gt;&gt;&gt; stud.print_name()
-Ramesh</pre>
-        </li>
-      </ul>
-      </li>
-
-    </ul>
-    </article>
-    </slide>
-  <slide>
-    <hgroup>
-      <h2>For loop</h2>
-      <h3>Just to loop through a sequence of items to <code>do something</code> with them</h3>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>There is no <code>i=0</code>, <code>i++</code> business thankfully :D</li>
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; shopping_items = ['Milk', 'Dosa Mix', 'Chicken', 'Soap']
-&gt;&gt;&gt; <b>for item in shopping_items:
-...     print 'I am buying %s' % item</b>
-...
-I am buying Milk
-I am buying Dosa Mix
-I am buying Chicken
-I am buying Soap</pre>
-
-      </ul>
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Exercises</h2>
-      <h3>Because we tend to forget stuff a lot! Like Ghajini</h3>
-    </hgroup>
-    <article>
-    <ul class="build">
-      <li>
-      Sum of squares of numbers from 1 till 100
-      </li>
-      <li>
-      Sum of digits in a number which is given as a string
-      </li>
-      <li>print the list of all methods available on <code>list</code> data type</li>
-      <li>Join two tuples and print the result</li>
-      <li>
-        print the ASCII value of <code>a-z</code>,<code>A-Z</code>
-      </li>
-    </ul>
-
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>List comprehensions</h2>
-      <h3>An ultra simple/concise way to create lists</h3>
-    </hgroup>
-    <article>
-    <ul class="build">
-      <li>
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; shopping_items = [('Milk', 2), ('Dosa Mix', 1), ('Soap', 3)]</pre>
-      </li>
-      <li>
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; [item[1] for item in shopping_items]  # Is that a single line <code>for loop</code>?
-[2, 1, 1, 3]</pre>
-      </li>
-    </ul>
-
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>String Operations</h2>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>String can act as a <code>Sequence</code>
-          <ul class="build">
-            <li>Access characters using indexes</li>
-            <li>You can iterate over the characters using a for loop</li>
-            <li>string.split()
-              <ul>
-                <li>
-                  <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; 'Husband Wife'.split()
-['Husband', 'Wife']</pre>
-                </li>
-              </ul>
-
-            </li>
-            <li>separator.join(sequence)
-              <ul>
-                <li>
-                  <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; ' '.join(['Husband', 'Wife'])  # Together forever :D
-'Husband Wife'</pre>
-                </li>
-              </ul>
-            </li>
-            <li>string[::-1]
-              <ul>
-                <li>
-                  <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; 'Husband Wife'[::-1]  # Is that a string reverse ?
-'efiW dnabsuH'</pre>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Working with Files</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Reading File Content
-          <ul class="build">
-            <li>
-            <pre class="prettyprint" data-lang="shell">$ cat hello_world.py
-print 'Hello World'
-print 'How many times I have to wish the world "Hello" ? '
-print 'Atleast a million times'</pre>
-            </li>
-            <li>
-              <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; hello_file = open('hello_world.py')
-&gt;&gt;&gt; for line in hello_file:
-...     print line
-...
-print 'Hello World'
-
-print 'How many times I have to wish the world "Hello" ? '
-
-print 'Atleast a million times brother!'
-
-&gt;&gt;&gt;
-</pre>
-            </li>
-
-          </ul>
-        </li>
-      </ul>
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Writing Content to Files</h2>
-    </hgroup>
-    <article>
-
-    <ul class="build">
-      <li>
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; hello_file = open('hello_world.py', 'w')
-&gt;&gt;&gt; extra_lines = ['Why ? ', 'I am Ghajini. ']
-&gt;&gt;&gt; for line in extra_lines:
-...     hello_file.write(line)
-...
-&gt;&gt;&gt; hello_file.close()  # This is good!</pre>
-      </li>
-      <li>
-        <pre class="prettyprint" data-lang="shell">$ cat hello_world.py
-Why ? I am Ghajini. </pre>
-      </li>
-    </ul>
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Closing Files in a better way</h2>
-    </hgroup>
-    <article>
-    <ul class="build">
-      <li>Understanding <code>with</code> aka <code>Context Manager</code></li>
-      <li>
-        <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; with open('hello_world.py', 'a') as hello_file:
-...      hello_file.write('Oye Ghajini, Your camera is stolen. Ayyo!!!!!')
-...
-        </pre>
-      </li>
-      <li>
-        <pre class="prettyprint" data-lang="shell">$ cat hello_world.py
-Why ? I am Ghajini. Oye Ghajini, Your camera is stolen. Ayyo!!!!!
-        </pre>
-      </li>
-    </ul>
-    </article>
-    </slide>
-
-
-
-  <slide>
-    <hgroup>
-      <h2>Few important Modules</h2>
-      <h3>time, os, datetime</h3>
-    </hgroup>
-    <article>
-    <ul class="build">
-      <li><code>time</code> module
-        <ul>
-          <li><pre class="prettyprint" data-lang="python">&gt;&gt;&gt; import time
-&gt;&gt;&gt; time.time()  # An easy way to profile code blocks
-1376666540.631406</pre>
-
-          </li>
-        </ul>
-      </li>
-      <li><code>os</code> module
-        <ul>
-          <li><pre class="prettyprint" data-lang="python">&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.environ</pre>
-
-          </li>
-        </ul>
-      </li>
-      <li><code>datetime</code> module
-        <ul>
-          <li><pre class="prettyprint" data-lang="python">&gt;&gt;&gt; import datetime
-&gt;&gt;&gt; datetime.date.today()
-datetime.date(2013, 8, 17)</pre>
-
-          </li>
-        </ul>
-      </li>
-    </ul>
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Many more important Modules</h2>
-    </hgroup>
-    <article>
-    <ul>
-      <li>sys</li>
-      <li>urllib, urllib2</li>
-      <li>csv</li>
-      <li>re</li>
-      <li>math</li>
-      <li>itertools</li>
-      <li>xml</li>
-      <li>pdb</li>
-      <li>hashlib</li>
-      <li>argparse</li>
-      <li>logging</li>
-      <li>unittest</li>
-      <li>json</li>
-    </ul>
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>dictionaries</h2>
-      <h3>Most powerful data-structure on the planet!</h3>
-    </hgroup>
-    <article>
-      <ul class="build">
-        <li>Similar to associative arrays in other languages</li>
-        <li>Nothing but an <code>unordered</code> set of <code>key</code>:<code>value</code> pairs
-          <ul class="build">
-            <li><pre class="prettyprint" data-lang="python">&gt;&gt;&gt; student = {'name': 'Nanda', 'roll': 522, 'edu': 'Engineering'}
-&gt;&gt;&gt; type(student)
-&lt;type 'dict'&gt;</type></pre>
-            </li>
-            <li><pre class="prettyprint" data-lang="python">&gt;&gt;&gt; student.keys()
-['edu', 'name', 'roll']
-&gt;&gt;&gt; student.values()
-['Engineering', 'Nanda', 522]
-&gt;&gt;&gt; student.items()
-[('edu', 'Engineering'), ('name', 'Nanda'), ('roll', 522)]
-</pre></li>
-          </ul>
-        </li>
-      </ul>
-    </article>
-    </slide>
-
-    <slide>
-    <hgroup>
-      <h2>Dict</h2>
-      <h3>Can Behave like a List too!</h3>
-    </hgroup>
-    <article>
-    <ul class="build">
-      <li>Like in a <code>List</code>, we can <code>index</code> elements by their <code>keys</code>
-          <ul>
-            <li><pre class="prettyprint" data-lang="python">&gt;&gt;&gt; student['name']
-'Nanda'
-&gt;&gt;&gt; student['edu']
-'Engineering'</pre>
-            </li>
-          </ul>
-      </li>
-      <li>Using Keys to loop through the data
-          <ul>
-            <li>
-              <pre class="prettyprint" data-lang="python">&gt;&gt;&gt; 'name' in student
-True
-&gt;&gt;&gt; for field in student:
-...     print field, student[field]
-...
-edu Engineering
-name Nanda
-roll 522</pre>
-            </li>
-          </ul>
-
-        </li>
-          </ul>
-
-    </article>
-    </slide>
-
-   <slide>
-    <hgroup>
-      <h2>Exercises</h2>
-      <h3>Because we tend to forget stuff a lot! Like Ghajini</h3>
-    </hgroup>
-    <article>
-    <ul class="build">
-      <li>Do a string reverse</li>
-      <li>Simulate a file copy</li>
-      <li>Print every alternate line in the line</li>
-      <li>Join two dictionaries</li>
-      <li>Create a dictionary which has key as a number, corresponding value should be the square of the number</li>
-    </ul>
-
-    </article>
-    </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Resources for further reading</h2>
-    </hgroup>
-    <article>
-    <ul>
-      <li><a href="http://python.org/doc/">Docs from Python.org</a></li>
-      <li><a href="https://github.com/gregmalcolm/python_koans">Python Koans</a></li>
-      <li><a href="http://learnpythonthehardway.org/book/">Learn Python The Hard Way</a></li>
-      <li><a href="http://python.net/~goodger/projects/pycon/2007/idiomatic/presentation.html">Code like a Pythonista</a></li>
-      <li><a href="http://www.pythonchallenge.com/">Python Challenge</a></li>
-      <li>Many more! Just <a href="https://www.google.com/search?q=learn+python&oq=learn+python&aqs=chrome.0.69i57j69i59j5j69i60j0j69i60.3719j0&sourceid=chrome&ie=UTF-8">Google</a> I say!</li>
-    </ul>
-    </article>
-    </slide>
-
-  <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/python-icon.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <h2>&gt;&gt;&gt;&nbsp;Thank You!</h2>
-      <p></p>
-    </article>
-    <p class="auto-fadein" data-config-contact>
-      <!-- populated from slide_config.json -->
-    </p>
-  </slide>
-
-
-
-  <slide class="backdrop"></slide>
-
-</slides>
-
-<script>
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
-
-<!--[if IE]>
-  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({mode: 'overlay'});</script>
-<![endif]-->
-</body>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <!--This one seems to work all the time, but really small on ipad-->
+        <!--<meta name="viewport" content="initial-scale=0.4">-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" media="all" href="stylesheets/default.css">
+        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="stylesheets/phone.css">
+        <base target="_blank">
+        <!-- This amazingness opens all links in a new tab. -->
+        <script data-main="javascripts/slides" src="javascripts/require-1.0.8.min.js"></script>
+    </head>
+    <body style="opacity: 0">
+        <slides class="layout-widescreen">
+            <slide class="logoslide nobackground">
+                <hgroup>
+                    <h2>Effective Engineer</h2>
+                </hgroup>
+                <article class="flexbox vcenter">
+                    <span><img src="images/effective_engineer.jpg"></span>
+                </article>
+            </slide>
+            <slide class="title-slide segue nobackground">
+                <aside class="gdbar"><img src="images/bulb.jpg"></aside>
+                <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+                <hgroup class="auto-fadein">
+                    <h1 data-config-title>
+                        <!-- populated from slide_config.json -->
+                    </h1>
+                    <h2 data-config-subtitle>
+                        <!-- populated from slide_config.json -->
+                    </h2>
+                    <p data-config-presenter>
+                        <!-- populated from slide_config.json -->
+                    </p>
+                </hgroup>
+            </slide>
+            <slide>
+                <hgroup>
+                    <h2>Disclaimer</h2>
+                </hgroup>
+                <article>
+                    <ul class="build">
+                        <li>These tips are based on my experience!</li>
+                        <li>I could be wrong sometimes. YMMV.</li>
+                        <li>Dont complain about this slides design.</li>
+                    </ul>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Who is an Effective Engineer ?</h2>
+                    <h3>One who......</h3>
+                </article>
+            </slide>
+            <slide>
+                <aside class="note">
+                    <section>
+                        <ul>
+                            <li>How many of you tried installing different versions of Python ?</li>
+                        </ul>
+                    </section>
+                </aside>
+                <hgroup>
+                    <h2>Knows how to install &amp; configure any general purpose softwares.</h2>
+                </hgroup>
+                <article>
+                    <ul class="build fade">
+                        <li>OSes. Like Linux etc... Most of the times</li>
+                        <li>Editors. Like Vim, Emacs, SublimeText.</li>
+                        <li>IDEs. Like Eclipse, PyCharm, Intellij-Idea</li>
+                        <li>Languages. Like Python 2.6.x, 2.7.x, 3.3.x etc...</li>
+                    </ul>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>But!</h2>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Does not get glued into one thing.</h2>
+                    <h3>Like..... Never!</h3>
+                </article>
+            </slide>
+            <slide>
+                <aside class="note">
+                    <section>
+                        <ul>
+                            <li>How many of you have done this ?</li>
+                        </ul>
+                    </section>
+                </aside>
+                <hgroup>
+                    <h2>When issues come from various points.</h2>
+                </hgroup>
+                <article>
+                    <ul class="build fade">
+                        <li><b>Editors</b> not working!</li>
+                        <li><b>Builds</b> not working!</li>
+                        <li><b>Version Control System</b> not working!.</li>
+                        <li><b>OS</b> not allowing to use the software you like</li>
+                        <li>Worst case! <b>App code</b> not working!</li>
+                    </ul>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>But what do I do then ?</h2>
+                    <br/>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h6>Moto-1</h6>
+                    <br/>
+                    <h2>Never escape from the problem!</h2>
+                    <br/>
+                    <span><img src="images/roads.jpg"></span>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h6>Moto-2</h6>
+                    <br/>
+                    <h2>Never Give Up!</h2>
+                    <h3>and</h3>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <aside class="note">
+                    <section>
+                        <ul>
+                            <li>My Startup Funda</li>
+                        </ul>
+                    </section>
+                </aside>
+                <article class="flexbox vcenter">
+                    <h6>Moto-3</h6>
+                    <br/>
+                    <span><img src="images/yes-i-can.jpg"></span>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>No! Seriously what do I do ?</h2>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Ask why obsessively.</h2>
+                    <br/>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Think a lot</h2>
+                    <br/>
+                    <h4>Only for certain time. Max 15 mins on one problem.</h4>
+                    <br/>
+                    <span><img src="images/kid-thinking.jpg"></span>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <aside class="note">
+                    <section>
+                        <ul>
+                            <li>Talk about Quora, Stackoverflow, Youtube, Google+, Safari books. No! no facebook!</li>
+                        </ul>
+                    </section>
+                </aside>
+                <article class="flexbox vcenter">
+                    <h2>Reads/Consumes a lot (from web)</h2>
+                    <br/>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <aside class="note">
+                    <section>
+                        <ul>
+                            <li>Talk about Outliers: 10000 hours rule.</li>
+                        </ul>
+                    </section>
+                </aside>
+                <article class="flexbox vcenter">
+                    <h2>Practice a lot</h2>
+                    <br/>
+                    <span><img src="images/outlier.jpg"></span>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Yes! More practice</h2>
+                    <br/>
+                    <span><img src="images/practice.gif"></span>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <aside class="note">
+                    <section>
+                        <ul>
+                            <li>Talk about speakerdeck pdf.</li>
+                        </ul>
+                    </section>
+                </aside>
+                <article class="flexbox vcenter">
+                    <h3>Have constant interest for</h3>
+                    <h2>Side/Pet Projects</h2>
+                    <br/>
+                    <span><img src="images/side_projects.jpg"></span>
+                </article>
+            </slide>
+            <slide>
+                <hgroup>
+                    <h2>More on Side Projects</h2>
+                </hgroup>
+                <article>
+                    <ul class='build fade'>
+                        <li>Do everything for a valid need.</li>
+                        <li>Trying because "something is cool" is also a valid need ;-)</li>
+                        <li>Works great, if pet projects are diverse in nature. Get out of the comfort zone.</li>
+                        <li>Keep short goals. Always.</li>
+                        <li>Keep it open. For iteration, feedback.</li>
+                        <li>Share/Present it for sure. To any audience.</li>
+                    </ul>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>But practicing may be boring!</h2>
+                    <h3>sometimes</h3>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h4>Be lazy!</h4>
+                    <h2>Automate!</h2>
+                </article>
+            </slide>
+            <slide>
+                <hgroup>
+                    <h2>Automate Anything, Everything</h2>
+                </hgroup>
+                <article>
+                    <ul class='build fade'>
+                        <li><a href="http://www.railpnrapi.com/4808817883">PNR Status API</a></li>
+                        <li><a href="http://irctc-pnr-status.com/autofill/">IRCTC Magic Autofill</a></li>
+                        <li>Our Release Engineering tools</li>
+                        <li>Autopep8</li>
+                        <li>ECS Payments</li>
+                        <li>Many Many Many Many more!</li>
+                    </ul>
+                </article>
+            </slide>
+            <slide>
+                <hgroup>
+                    <h2>Be a Fan of something</h2>
+                </hgroup>
+                <article>
+                    <ul class='build fade'>
+                        <li>Vim ninja ? Great</li>
+                        <li>AngularJS Rockstar ? Awesome!</li>
+                        <li>Fan of Rahul ? Get out of here.</li>
+                        <li>Fan of Modi ? Still...Get out of here.</li>
+                        <li>Fan of Test Driven Development. The next time I go out for shopping, I will call you!</li>
+                        <li>Fan of Code Reviews ? I will pay your shopping bill.</li>
+                        <li>Fan of Apple ? Give me a break!</li>
+                    </ul>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Why being a Fan helps ?</h2>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Thats where your true <span class='red'>self</span> comes into play</h2>
+                    <h3>bingo!</h3>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h3>Anything you like it <span class='green'>more</span>, you want it <span class='red'>desparately</span>.</h3>
+                    <br/>
+                    <br/>
+                    <h3>Anything you want it <span class='green'>desparately</span>, you will try to <span class='red'>master</span> that.</h3>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h4>In this journey, unknowingly you will become an</h4>
+                    <h2>Effective Engineer!</h2>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h2>Thankyou!</h2>
+                    <h4>But we are not done yet! Take your seats.</h4>
+                </article>
+            </slide>
+            <slide class="logoslide nobackground">
+                <article class="flexbox vcenter">
+                    <h4>Now that you attended this session</h4>
+                    <h2>What it takes to give a Techtalk ?</h2>
+                </article>
+            </slide>
+            <slide class="thank-you-slide segue nobackground">
+                <aside class="gdbar right"><img src="images/bulb.jpg"></aside>
+                <article class="flexbox vleft auto-fadein">
+                    <h2>&gt;&gt;&gt;&nbsp;Thank You!</h2>
+                    <p></p>
+                </article>
+                <p class="auto-fadein" data-config-contact>
+                    <!-- populated from slide_config.json -->
+                </p>
+            </slide>
+            <slide class="backdrop"></slide>
+        </slides>
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!--[if IE]>
+        <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+        <script>CFInstall.check({mode: 'overlay'});</script>
+        <![endif]-->
+    </body>
 </html>
